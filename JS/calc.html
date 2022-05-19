@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="calc-wrap">
+        <div id="calc">
+            <textarea id=inputVal>0</textarea>
+        </div>
+    </div>
+
+        <style>
+            .btn {
+                width: 60px;
+                height: 60px;
+                background: #fc0;
+                display: inline-block;
+                text-align: center;
+                line-height: 60px;
+                user-select: none;
+            }
+        
+            .btn:hover {
+                background: #f70;
+                color: #fff;
+            }
+        
+            #calc-wrap {
+                padding: 10px;
+                width: 100%;
+                text-align: center;
+                background: #eee;
+            }
+        
+            #calc {
+                width: 240px;
+                display: inline-block;
+            }
+        
+            #inputVal {
+                width: 100%;
+                border: 0;
+                font-size: 16px;
+                resize: vertical;
+            }
+            body{
+                background:black url(https://klike.net/uploads/posts/2020-01/1579682553_2.jpg);
+            }
+        </style>
+
+</body>
+<script>
+
+    window.addEventListener('load', function OnWindowLoaded() {
+    
+        var signs = [
+            '1', '2', '3', '+',
+            '4', '5', '6', '-',
+            '7', '8', '9', '/',
+            '0', '=', '.', 'c'
+        ];
+
+    
+        var calc = document.getElementById('calc');
+
+    
+        var textArea = document.getElementById('inputVal');
+
+    
+        signs.forEach(function (sign) {
+            var signElement = document.createElement('div');
+            signElement.className = 'btn';
+            signElement.innerHTML = sign;
+            calc.appendChild(signElement);
+        });
+
+        document.querySelectorAll('#calc-wrap .btn').forEach(function (button) {
+            
+            button.addEventListener('click', onButtonClick);
+        });
+
+        
+        function onButtonClick(e) {
+            
+            if (e.target.innerHTML === 'c') {
+                
+                textArea.innerHTML = '0';
+            } else if (e.target.innerHTML === '=') {
+                
+                textArea.innerHTML = eval(textArea.innerHTML);
+            } else if (textArea.innerHTML === '0') {
+                
+                textArea.innerHTML = e.target.innerHTML;
+            } else {
+                
+                textArea.innerHTML += e.target.innerHTML;
+            }
+        }
+    });
+</script>
+</html>

@@ -1,0 +1,49 @@
+body {
+    margin: 0;
+    background: url("../JS/fon.jpg");
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+    font-size: 18px;
+}
+p {
+    font-size: 10px;
+    color: rgb(0, 0, 9);
+}
+.card {
+    width: 500px;
+    margin: 0 auto;
+    
+    background-color: #ffffff;
+    box-shadow: 0 5px 10px #cccccc;
+    border-radius: 10px;
+}
+
+.photo {
+    display: block;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    border-radius: 50%;
+}
+
+.card-title {
+    font-size: 20px;
+    text-align: center;
+    color: rgb(0, 1, 0);
+}
+
+.card-text{
+    font-size: 9px;
+    text-align: center;
+    color: rgb(0, 1, 0);
+}
+.card-subtitle {
+    font-size: 15px;
+    color: firebrick;
+    padding-left: 20px;
+}
+.card-list {
+    padding-left: 5;
+    list-style-position: inside;
+    font-size: 14px;
+}
